@@ -14,6 +14,7 @@
 		FADDA00B1B84142E0016F488 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FADDA00A1B84142E0016F488 /* Images.xcassets */; };
 		FADDA00E1B84142E0016F488 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADDA00C1B84142E0016F488 /* LaunchScreen.xib */; };
 		FADDA01A1B84142E0016F488 /* LPPageScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FADDA0191B84142E0016F488 /* LPPageScrollViewTests.m */; };
+		FADDA0251B841BF70016F488 /* LPPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FADDA0241B841BF70016F488 /* LPPageScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +31,18 @@
 		FADD9FFA1B84142E0016F488 /* LPPageScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPPageScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADD9FFE1B84142E0016F488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FADD9FFF1B84142E0016F488 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FADDA0011B84142E0016F488 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FADDA0021B84142E0016F488 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FADDA0041B84142E0016F488 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FADDA0051B84142E0016F488 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FADDA0011B84142E0016F488 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = LPPageScrollView/AppDelegate.h; sourceTree = "<group>"; };
+		FADDA0021B84142E0016F488 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = LPPageScrollView/AppDelegate.m; sourceTree = "<group>"; };
+		FADDA0041B84142E0016F488 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = LPPageScrollView/ViewController.h; sourceTree = "<group>"; };
+		FADDA0051B84142E0016F488 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = LPPageScrollView/ViewController.m; sourceTree = "<group>"; };
 		FADDA0081B84142E0016F488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FADDA00A1B84142E0016F488 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FADDA00A1B84142E0016F488 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = LPPageScrollView/Images.xcassets; sourceTree = "<group>"; };
 		FADDA00D1B84142E0016F488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FADDA0131B84142E0016F488 /* LPPageScrollViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LPPageScrollViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADDA0181B84142E0016F488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FADDA0191B84142E0016F488 /* LPPageScrollViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPPageScrollViewTests.m; sourceTree = "<group>"; };
+		FADDA0231B841BF70016F488 /* LPPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPPageScrollView.h; sourceTree = "<group>"; };
+		FADDA0241B841BF70016F488 /* LPPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPPageScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,14 @@
 			isa = PBXGroup;
 			children = (
 				FADD9FFC1B84142E0016F488 /* LPPageScrollView */,
+				FADDA0011B84142E0016F488 /* AppDelegate.h */,
+				FADDA0021B84142E0016F488 /* AppDelegate.m */,
+				FADDA0041B84142E0016F488 /* ViewController.h */,
+				FADDA0051B84142E0016F488 /* ViewController.m */,
+				FADDA0071B84142E0016F488 /* Main.storyboard */,
+				FADDA00A1B84142E0016F488 /* Images.xcassets */,
+				FADDA00C1B84142E0016F488 /* LaunchScreen.xib */,
+				FADD9FFD1B84142E0016F488 /* Supporting Files */,
 				FADDA0161B84142E0016F488 /* LPPageScrollViewTests */,
 				FADD9FFB1B84142E0016F488 /* Products */,
 			);
@@ -81,14 +92,8 @@
 		FADD9FFC1B84142E0016F488 /* LPPageScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				FADDA0011B84142E0016F488 /* AppDelegate.h */,
-				FADDA0021B84142E0016F488 /* AppDelegate.m */,
-				FADDA0041B84142E0016F488 /* ViewController.h */,
-				FADDA0051B84142E0016F488 /* ViewController.m */,
-				FADDA0071B84142E0016F488 /* Main.storyboard */,
-				FADDA00A1B84142E0016F488 /* Images.xcassets */,
-				FADDA00C1B84142E0016F488 /* LaunchScreen.xib */,
-				FADD9FFD1B84142E0016F488 /* Supporting Files */,
+				FADDA0231B841BF70016F488 /* LPPageScrollView.h */,
+				FADDA0241B841BF70016F488 /* LPPageScrollView.m */,
 			);
 			path = LPPageScrollView;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 				FADD9FFF1B84142E0016F488 /* main.m */,
 			);
 			name = "Supporting Files";
+			path = LPPageScrollView;
 			sourceTree = "<group>";
 		};
 		FADDA0161B84142E0016F488 /* LPPageScrollViewTests */ = {
@@ -219,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADDA0251B841BF70016F488 /* LPPageScrollView.m in Sources */,
 				FADDA0061B84142E0016F488 /* ViewController.m in Sources */,
 				FADDA0031B84142E0016F488 /* AppDelegate.m in Sources */,
 				FADDA0001B84142E0016F488 /* main.m in Sources */,
@@ -250,6 +257,7 @@
 				FADDA0081B84142E0016F488 /* Base */,
 			);
 			name = Main.storyboard;
+			path = LPPageScrollView;
 			sourceTree = "<group>";
 		};
 		FADDA00C1B84142E0016F488 /* LaunchScreen.xib */ = {
@@ -258,6 +266,7 @@
 				FADDA00D1B84142E0016F488 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = LPPageScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -418,6 +427,7 @@
 				FADDA01F1B84142E0016F488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FADDA0201B84142E0016F488 /* Build configuration list for PBXNativeTarget "LPPageScrollViewTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +436,7 @@
 				FADDA0221B84142E0016F488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
