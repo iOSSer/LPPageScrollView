@@ -8,14 +8,55 @@
 
 #import "LPPageScrollView.h"
 
+@interface LPPageScrollView()
+
+@property (nonatomic, strong) UIScrollView *pageScrollView;
+
+@end
+
 @implementation LPPageScrollView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+//@synthesize coverImages = _coverImages;
+
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        NSLog(@"init");
+        self.pageScrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+        self.pageScrollView.backgroundColor = [UIColor orangeColor];
+        [self addSubview:self.pageScrollView];
+        self.pageScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds) * 2, frame.size.height);
+    }
+    return self;
 }
-*/
+
+- (void)setCoverImages:(NSArray *)coverImages
+{
+    _coverImages = coverImages;
+    
+//    [self initSubviews];
+}
+
+- (void) initSubviews
+{
+    NSLog(@"%@", self.coverImages);
+    if (self.coverImages.count < 1) {
+       NSAssert(self.coverImages.count < 1, @"coverImages.count < 1");
+        return;
+    }
+//    self.pagingEnabled = YES;
+//    self.alwaysBounceHorizontal = NO;
+    
+//    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//    for (NSUInteger i = 0; i < self.coverImages.count; i ++) {
+//        CGFloat left = CGRectGetWidth(self.bounds) * i;
+//        UIImageView *coverImage = [[UIImageView alloc] initWithFrame:CGRectMake(left, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))];
+//        coverImage.backgroundColor = [UIColor orangeColor];
+//        [self addSubview:coverImage];
+//    }
+    
+}
 
 @end

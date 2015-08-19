@@ -10,13 +10,23 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) LPPageScrollView *pageScrollView;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationController.navigationBar.hidden = YES;
+    
+    self.pageScrollView = [[LPPageScrollView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 200)];
+    self.pageScrollView.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:self.pageScrollView];
+//    self.pageScrollView.center = self.view.center;
+    
+    self.pageScrollView.coverImages = @[@"1", @"2", @"3"];
 }
 
 - (void)didReceiveMemoryWarning {
