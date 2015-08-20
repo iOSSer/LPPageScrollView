@@ -10,7 +10,7 @@
 
 @interface LPPageScrollView()
 
-@property (nonatomic, strong) UIScrollView *pageScrollView;
+//@property (nonatomic, strong) UIScrollView *pageScrollView;
 
 @end
 
@@ -24,10 +24,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         NSLog(@"init");
-        self.pageScrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
-        self.pageScrollView.backgroundColor = [UIColor orangeColor];
-        [self addSubview:self.pageScrollView];
-        self.pageScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds) * 2, frame.size.height);
+//        self = [[UIScrollView alloc] initWithFrame:self.bounds];
+        self.backgroundColor = [UIColor orangeColor];
+        self.frame = frame;
+//        [self addSubview:self.pageScrollView];
+        self.contentSize = CGSizeMake(CGRectGetWidth(self.bounds) * 2, frame.size.height);
     }
     return self;
 }

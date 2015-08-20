@@ -19,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.hidden = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    self.navigationController.navigationBar.hidden = YES;
     
     self.pageScrollView = [[LPPageScrollView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 200)];
     self.pageScrollView.backgroundColor = [UIColor lightGrayColor];

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>4ABCB6CB-0FEE-4EE5-ABBB-FC113EF4E0AD</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>LPPageScrollView</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1B9EDA40D1A64651732F3C0994BC142BECC5C081</key>
 		<string>https://github.com/iOSSer/LPPageScrollView.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>LPPageScrollView/LPPageScrollView.xcodeproj/project.xcworkspace</string>
+	<string>LPPageScrollView/LPPageScrollView.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1B9EDA40D1A64651732F3C0994BC142BECC5C081</key>
