@@ -25,9 +25,10 @@
     self.pageScrollView = [[LPPageScrollView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 200)];
     self.pageScrollView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:self.pageScrollView];
-//    self.pageScrollView.center = self.view.center;
+    self.pageScrollView.coverImages = @[@"fire_balloon", @"profile", @"screen"];
     
-    self.pageScrollView.coverImages = @[@"1", @"2", @"3"];
+    self.pageScrollView.pageControl.backgroundColor = self.view.tintColor;
+    self.pageScrollView.pageControl.alpha = 0.9;
 }
 
 - (void)didReceiveMemoryWarning {
