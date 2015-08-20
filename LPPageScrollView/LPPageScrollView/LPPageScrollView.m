@@ -10,7 +10,7 @@
 
 @interface LPPageScrollView()<UIScrollViewDelegate>
 
-
+@property (nonatomic, strong) NSArray *tempCoverImages;
 
 @end
 
@@ -38,9 +38,20 @@ static CGFloat pageControlHeight = 20;
     return self;
 }
 
-- (void)setCoverImages:(NSArray *)coverImages
+- (void)setCoverImages:(NSMutableArray *)coverImages
 {
-    _coverImages = coverImages;
+    _coverImages = [NSMutableArray arrayWithArray:coverImages];
+    _tempCoverImages = [NSArray arrayWithArray:coverImages];
+    if (_coverImages.count < 1) {
+        NSAssert(_coverImages.count < 1, @"coverImages.count < 1");
+        return;
+    }
+    
+    NSString *firstObject = _coverImages.firstObject;
+    NSString *lastObject = _coverImages.lastObject;
+    
+//    [_coverImages insertObject:firstObject atIndex:_coverImages.count - 1];
+    [_coverImages insertObject:lastObject atIndex:0];
     
     [self initSubviews];
 }
@@ -49,13 +60,6 @@ static CGFloat pageControlHeight = 20;
 
 - (void) initSubviews
 {
-    NSLog(@"%@", _coverImages);
-    if (_coverImages.count < 1) {
-       NSAssert(_coverImages.count < 1, @"coverImages.count < 1");
-        return;
-    }
-    
-    
     self.pageScrollView.pagingEnabled = YES;
 //    self.pageScrollView.alwaysBounceHorizontal = NO;
     self.pageScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds) * _coverImages.count, self.bounds.size.height);
@@ -72,25 +76,46 @@ static CGFloat pageControlHeight = 20;
 //    CGFloat pcWidth = _coverImages.count * 20 < LPScreenSize.width ?: LPScreenSize.width;
     CGFloat pcWidth = _coverImages.count * 20;
     _pageControl.frame = CGRectMake((LPScreenSize.width - pcWidth) / 2, CGRectGetHeight(self.frame) - pageControlHeight - 10, pcWidth, pageControlHeight);
-    _pageControl.numberOfPages =  3;
+    _pageControl.numberOfPages =  _tempCoverImages.count;
     _pageControl.layer.cornerRadius = 8;
     _pageControl.layer.masksToBounds = YES;
     
+    _pageScrollView.contentOffset = CGPointMake(CGRectGetWidth(_pageScrollView.frame), _pageScrollView.contentOffset.y);
+    _pageControl.currentPage = 0;
+    
+}
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
+    
     
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     NSInteger page = scrollView.contentOffset.x / CGRectGetWidth(scrollView.frame);
-    if (_pageControl.currentPage == page) {
+    
+    if (page == 0) {
+        scrollView.contentOffset = CGPointMake(CGRectGetWidth(scrollView.frame) * (_coverImages.count - 1), scrollView.contentOffset.y);
+    }else if (page == _coverImages.count - 1)
+    {
+        scrollView.contentOffset = CGPointZero;
+    }
+    
+    page = scrollView.contentOffset.x / CGRectGetWidth(scrollView.frame);
+//    NSLog(@"page %d", page);
+    if (page == 0) {
+        _pageControl.currentPage = _coverImages.count - 1;
+    }else if (page == _coverImages.count - 1) {
+        _pageControl.currentPage = 1;
         return;
     }
     _pageControl.currentPage = page;
-    NSLog(@"page %ld", (long)page);
 }
 
 @end

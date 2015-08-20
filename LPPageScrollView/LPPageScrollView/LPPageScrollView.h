@@ -10,7 +10,7 @@
 
 @interface LPPageScrollView : UIView
 
-@property (nonatomic, strong) NSArray *coverImages; //封面图片数组
+@property (nonatomic, strong) NSMutableArray *coverImages; //封面图片数组
 
 @property (nonatomic, strong) UIScrollView *pageScrollView; //pageScrollView
 
